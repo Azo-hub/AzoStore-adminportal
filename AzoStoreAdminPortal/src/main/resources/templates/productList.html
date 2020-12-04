@@ -10,51 +10,59 @@
 
 <body>
 
-	<div th:replace="fragments::menubar" class = "w-100"></div>
+	<div th:replace="fragments::menubar" class="w-100"></div>
 
-	<table class="table table-bordered table-hover table-striped" id = "productlisttable">
-  <thead>
-    <tr>
-      <th style = "text-align:center;"><input th:id = "selectAllProducts" type = "checkbox" /></th>
-      <th scope="col">Name</th>
-      <th scope="col">Brand</th>
-      <th scope="col">Category</th>
-      <th scope="col">List Price</th>
-      <th scope="col">Our Price</th>
-      <th scope="col">Active</th>
-      <th scope="col">Operation</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr data-th-each = "product:${productList}">
-      
-      <td style = "text-align:center;"><input hidden = "hidden" name = "id" th:value = "${product.id}"/>
-      	<input th:id = "'selected' + ${product.id}" class = "checkboxProduct" type = "checkbox" />
-      </td>
-      <td><a th:href = "@{'/productInfo/'+${product.id}}"><span th:text = "${product.name}"></span></a></td>
-      <td th:text = "${product.brand}"></td>
-      <td th:text = "${product.category}"></td>
-      <td th:text = "${product.listPrice}"></td>
-      <td th:text = "${product.ourPrice}"></td>
-      <td th:text = "${product.active}"></td>
-      <td>
-      	<input hidden = "hidden" name = "id" th:value = "${product.id}"/>
-      	<button th:id = "'oneProduct-' + ${product.id}" class = "btn btn-danger btn-xs delete-book" type = "submit" value = "delete">
-      	<span class = "fa fa-times"></span>Delete</button>
-      </td>
-    </tr>
-    
-  </tbody>
-</table>
+	<table class="table table-bordered table-hover table-striped"
+		id="productlisttable">
+		<thead>
+			<tr>
+				<th style="text-align: center;"><input
+					th:id="selectAllProducts" type="checkbox" /></th>
+				<th scope="col">Name</th>
+				<th scope="col">Brand</th>
+				<th scope="col">Category</th>
+				<th scope="col">List Price</th>
+				<th scope="col">Our Price</th>
+				<th scope="col">Active</th>
+				<th scope="col">Operation</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data-th-each="product:${productList}">
 
-<button th:id = "deleteSelected" class = "btn btn-danger btn-xs">Delete Selected</button>
+				<td style="text-align: center;"><input hidden="hidden"
+					name="id" th:value="${product.id}" /> <input
+					th:id="'selected' + ${product.id}" class="checkboxProduct"
+					type="checkbox" /></td>
+				<td><a th:href="@{'/productInfo/'+${product.id}}"><span
+						th:text="${product.name}"></span></a></td>
+				<td th:text="${product.brand}"></td>
+				<td th:text="${product.category}"></td>
+				<td th:text="${product.listPrice}"></td>
+				<td th:text="${product.ourPrice}"></td>
+				<td th:text="${product.active}"></td>
+				<td>
+					<!-- <input hidden = "hidden" name = "id" th:value = "${product.id}"/>
+      	<button th:id = "'oneProduct-' + ${product.id}" class = "btn btn-danger btn-xs delete-product" type = "submit" value = "delete">
+      	<span class = "fa fa-times"></span>Delete</button>  --> <a
+					th:href="@{'/delete/' + ${product.id}}"
+					class="btn btn-danger btn-md"><span class="fa fa-times"></span>
+						Delete</a>
+				</td>
+			</tr>
 
-	
+		</tbody>
+	</table>
+
+	<button th:id="deleteSelected" class="btn btn-danger btn-xs">Delete
+		Selected</button>
+
+
 
 
 	<div th:replace="fragments::javascript"></div>
-	
-	
+
+
 </body>
 
 

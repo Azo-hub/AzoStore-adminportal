@@ -24,7 +24,7 @@
 				<div class = "col-md-3">
 					<div class = "panel panel-default">
 						<div class = "panel-body">
-							<img th:src= "@{/Images/product/} + ${product.id}+'.png'" width = "200px" height = "200px" />
+							<img th:src= "@{'/Images/product/' + ${product.id}+'.png'}" width = "200px" height = "200px" />
 						</div>
 					</div>
 				</div>

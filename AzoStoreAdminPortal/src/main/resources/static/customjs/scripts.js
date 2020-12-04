@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function() {
-	$('.delete-book').on('click', function (){
+	$('.delete-product').on('click', function (){
 		/*<![CDATA[*/
 		var path = /*[[@{/}]]*/ 'remove';
 		/*]]>*/
@@ -11,7 +11,7 @@ $(document).ready(function() {
 		var id = $(this).attr('id');
 		
 		bootbox.confirm({
-			message: "Are you sure to remove this book? It can't be undone.",
+			message: "Are you sure to remove this product? It can't be undone.",
 			buttons: {
 				cancel:{
 					label:'<i class = "fa fa-times"></i> Cancel'
@@ -32,24 +32,24 @@ $(document).ready(function() {
 	});
 
 
-	var bookIdList = [];
+	var productIdList = [];
 	
-/*	$('.checkboxBook').click(function() {
+/*	$('.checkboxProduct').click(function() {
 		var id = $(this).attr('id');
 		if(this.checked) {
-			bookIdList.push(id);
+			productIdList.push(id);
 			
 		} else {
-			bookIdList.splice(bookIdList.indexOf(id), 1);
+			productIdList.splice(productIdList.indexOf(id), 1);
 		}
 	}) */
 	
 	$('#deleteSelected').click(function() {
-		var idList = $('.checkboxBook');
-		var bookIdList = [];
+		var idList = $('.checkboxProduct');
+		var productedIdList = [];
 		for (var i = 0; i < idList.lenght; i++) {
 			if(idList[i].checked == true) {
-				bookIdList.push(idList[i]['id'])
+				productIdList.push(idList[i]['id'])
 				
 			}
 		}
@@ -68,7 +68,7 @@ $(document).ready(function() {
 		var id = $(this).attr('id');
 		
 		bootbox.confirm({
-			message: "Are you sure to remove all selected books? It can't be undone.",
+			message: "Are you sure to remove all selected products? It can't be undone.",
 			buttons: {
 				cancel:{
 					label:'<i class = "fa fa-times"></i> Cancel'
@@ -82,7 +82,7 @@ $(document).ready(function() {
 						$.ajax({
 							type: 'POST',
 							url:path,
-							data:JSON.stringify(bookIdList),
+							data:JSON.stringify(productIdList),
 							contentType: "application/json",
 							success:function(res) {console.log(res); location.reload()},
 							error:function(res){console.log(res); location.reload();}
@@ -95,14 +95,14 @@ $(document).ready(function() {
 		
 	});
 	
-	$("#selectAllBooks").click(function() {
+	$("#selectAllProducts").click(function() {
 		if($(this).prop("checked")==true) {
-			$(".checkboxBook").click();
-			$(".checkboxBook").prop("checked",true);
+			$(".checkboxProduct").click();
+			$(".checkboxProduct").prop("checked",true);
 			
 		} else if ($(this).prop("checked")==false) {
-			$(".checkboxBook").click();
-			$(".checkboxBook").prop("checked",false);
+			$(".checkboxProduct").click();
+			$(".checkboxProduct").prop("checked",false);
 		} 
 	})
 });
