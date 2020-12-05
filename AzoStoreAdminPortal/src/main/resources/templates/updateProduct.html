@@ -133,27 +133,36 @@
 								</div>
 
 								<div class="col-sm-8 form-group">
-								<div class="input-group">
-									<span class="input-group-addon">$</span> <input type="number"
-										class="form-control" id="listprice" name="listPrice"  step = "0.01"
-										placeholder="List Price" th:value="${product.listPrice}" aria-describedby="listpriceHelpBlock" />
+									
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">$</span>
+
+										</div>
+										<input type="number" class="form-control"
+											aria-label="Dollar amount (with dot and two decimal places)"
+											id="listprice" name="listPrice"
+											step="0.01" placeholder="List Price"
+											th:value="${product.listPrice}"
+											aria-describedby="listpriceHelpBlock">
+									</div>
+														
 
 								</div>
+								<div class="col-sm-2">
 
+									<small id="listpriceHelpBlock" class="form-text text-muted">List
+										Price</small>
 								</div>
-								<div class = "col-sm-2">
-								
-								<small id="listpriceHelpBlock" class="form-text text-muted">List Price</small>
-								</div>
-							
+
 							</div>
-							
-							
-							
-							
-							
-							
-							
+
+
+
+
+
+
+
 							<!-- our price -->
 							<div class="row my-2">
 
@@ -163,21 +172,30 @@
 								</div>
 
 								<div class="col-sm-8 form-group">
-								<div class="input-group">
-									<span class="input-group-addon">$</span> <input type="number"
-										class="form-control" id="ourPrice" name="ourPrice" step = "0.01"
-										placeholder="Our Price" th:value="${product.ourPrice}" aria-describedby="ourpriceHelpBlock" />
+
+									<div class="input-group mb-3">
+										<div class="input-group-prepend">
+											<span class="input-group-text">$</span>
+
+										</div>
+										<input type="number" class="form-control"
+											aria-label="Dollar amount (with dot and two decimal places)"
+											id="ourPrice" name="ourPrice" step="0.01"
+											placeholder="Our Price" th:value="${product.ourPrice}"
+											aria-describedby="ourpriceHelpBlock">
+									</div>
+
 
 								</div>
 
+								<div class="col-sm-2 form-group">
+									<small id="ourpriceHelpBlock" class="form-text text-muted">Our
+										Price</small>
 								</div>
-								
-								<div class = "col-sm-2 form-group">
-								<small id="ourpriceHelpBlock" class="form-text text-muted">Our Price</small>
-								</div>
-								
+
 							</div>
-							
+
+
 							
 							
 							
@@ -211,8 +229,7 @@
 							
 							
 							
-							
-							<!-- Status of Product -->
+						<!-- Status of Product -->
 							<div class="row my-2">
 
 								<div class="col-sm-2 form-group">
@@ -221,25 +238,30 @@
 								</div>
 
 								<div class="col-sm-4 form-group">
-								<div class="input-group">
 
-									<label><input type="radio" class="form-control"
-										name="active" value="true" checked = "checked" /> Active</label> <label><input
-										type="radio" class="form-control" name="active" value="false" aria-describedby="statusHelpBlock" />
-										Inactive</label>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="active"
+											id="inlineRadio1" value="true" checked="checked"> <label
+											class="form-check-label" for="inlineRadio1">Active</label>
+									</div>
+									<div class="form-check form-check-inline">
+										<input class="form-check-input" type="radio" name="active"
+											id="inlineRadio2" value="false"> <label
+											class="form-check-label" for="inlineRadio2"
+											aria-describedby="statusHelpBlock">Inactive</label>
+									</div>
 
 								</div>
 
+								<div class="col-sm-6 form-group">
+									<small id="statusHelpBlock" class="form-text text-muted">Whether
+										the product is active or inactive.</small>
+
 								</div>
-								
-								<div class = "col-sm-6 form-group">
-								<small id="statusHelpBlock" class="form-text text-muted">Whether the product is active or inactive.</small>
-									
-								</div>
-								
+
 							</div>
-							
-							
+
+
 							
 							
 							

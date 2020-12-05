@@ -60,7 +60,7 @@
 		<!-- Navigation -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-dark">
-  <a class="navbar-brand" th:href="@{/}">Azo Store</a>
+  <a class="navbar-brand ml-2" th:href="@{/}">Azo Store</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -82,15 +82,17 @@
         </div>
       </li>
       
-  	</ul>  
-    <form>
-    <input type="text" placeholder="Search"  />
+  	</ul>
+  	
+  	<!--   
+    <form th:action = "@{/searchProduct}" method = "Post" class="form-horizontal">
+    <input type="search" placeholder="Search Product"  />
     <button class="btn btn-outline-success btn-sm my-2 my-sm-0" type="submit">Search</button>
  
-  </form>
+  </form>   -->
   <ul class="navbar-nav ml-5" >
   <li class="nav-item">
-        <a class="nav-link" th:href="@{/logout}" tabindex="-1" aria-disabled="true">Sign Out</a>
+        <a class="nav-link mr-2" th:href="@{/logout}" tabindex="-1" aria-disabled="true">Sign Out</a>
       </li>
    </ul>
   
